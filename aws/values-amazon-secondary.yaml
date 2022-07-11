@@ -30,9 +30,12 @@ prometheus:
   # In addition, node-export must be disabled if there is an existing daemonset: https://guide.kubecost.com/hc/en-us/articles/4407601830679-Troubleshoot-Install#a-name-node-exporter-a-issue-failedscheduling-kubecost-prometheus-node-exporter
   # nodeExporter:
   #   enabled: false
-  # serviceAccounts:
-  #   nodeExporter:
-  #     create: false
+  serviceAccounts:
+    # nodeExporter:
+    #   create: false
+    server:
+      create: false
+      name: kubecost-serviceaccount-thanos
 thanos:
   compact:
     enabled: false

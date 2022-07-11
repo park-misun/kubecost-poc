@@ -2,9 +2,11 @@ type: S3
 config:
   bucket: "AWS_object_store_bucket"
   endpoint: "s3.amazonaws.com"
-  region: "us-east-2"
+  region: "AWS_object_store_region"
+  access_key: "AWS_object_store_access_key"
   insecure: false
   signature_version2: false
+  secret_key: "AWS_object_store_secret_key"
   put_user_metadata:
       "X-Amz-Acl": "bucket-owner-full-control"
   http_config:

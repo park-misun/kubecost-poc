@@ -1,6 +1,7 @@
-This is still a work in progress, meant as an example method for attached an IAM role to the service account used by Kubecost.
+Note: we should update readme-enterprise with the suggested instructions, the detail below is one way (maybe not the right way).
 
-There are multiple methods for doing this, if the method below does not fit your requirements, please reach out to us. 
+We should use seperate accounts with minimum privs whenever possible.
+
 
 Using aws with IAM roles attached to service accounts:
 
@@ -33,3 +34,7 @@ kubectl create secret generic aws-service-key -n kubecost --from-file=service-ke
 kubectl create secret generic cloud-integration -n kubecost --from-file=cloud-integration.json
 helm upgrade --install kubecost kubecost/cost-analyzer --namespace kubecost -f https://raw.githubusercontent.com/kubecost/cost-analyzer-helm-chart/master/cost-analyzer/values-thanos.yaml -f values-amazon-primary.yaml
 ```
+
+## Additional documentation:
+
+<https://guide.kubecost.com/hc/en-us/articles/4407595928087-AWS-Cloud-Integration#step-4-attaching-iam-permissions-to-kubecost>
